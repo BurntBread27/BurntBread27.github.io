@@ -192,10 +192,26 @@
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
                 <h1 id="HTML5-参考手册"><a href="#HTML5-参考手册" class="headerlink" title="HTML5  参考手册"></a>HTML5 <canvas> 参考手册</h1><hr>
-<h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>HTML5 <canvas> 标签用于绘制图像（通过脚本，通常是 JavaScript）。</p>
-<p>不过，<canvas> 元素本身并没有绘制能力（它仅仅是图形的容器） - 您必须使用脚本来完成实际的绘图任务。</p>
-<p>getContext() 方法可返回一个对象，该对象提供了用于在画布上绘图的方法和属性。</p>
-<p>本手册提供完整的 getContext(“2d”) 对象的属性和方法，可用于在画布上绘制文本、线条、矩形、圆形等等。</p>
+<h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><h1 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h1><p>时间复杂度和空间复杂度是衡量一个算法效率的重要标准。</p>
+<h2 id="基本操作数¶"><a href="#基本操作数¶" class="headerlink" title="基本操作数¶"></a>基本操作数<a target="_blank" rel="noopener" href="https://oi-wiki.org/basic/complexity/#_1">¶</a></h2><p>同一个算法在不同的计算机上运行的速度会有一定的差别，并且实际运行速度难以在理论上进行计算，实际去测量又比较麻烦，所以我们通常考虑的不是算法运行的实际用时，而是算法运行所需要进行的基本操作的数量。</p>
+<p>在普通的计算机上，加减乘除、访问变量（基本数据类型的变量，下同）、给变量赋值等都可以看作基本操作。</p>
+<p>对基本操作的计数或是估测可以作为评判算法用时的指标。</p>
+<h2 id="时间复杂度¶"><a href="#时间复杂度¶" class="headerlink" title="时间复杂度¶"></a>时间复杂度<a target="_blank" rel="noopener" href="https://oi-wiki.org/basic/complexity/#_2">¶</a></h2><p>衡量一个算法的快慢，一定要考虑数据规模的大小。所谓数据规模，一般指输入的数字个数、输入中给出的图的点数与边数等等。一般来说，数据规模越大，算法的用时就越长。而在算法竞赛中，我们衡量一个算法的效率时，最重要的不是看它在某个数据规模下的用时，而是看它的用时随数据规模而增长的趋势，即 <strong>时间复杂度</strong>。</p>
+<p>考虑用时随数据规模变化的趋势的主要原因有以下几点：</p>
+<ol>
+<li>现代计算机每秒可以处理数亿乃至更多次基本运算，因此我们处理的数据规模通常很大。如果算法 A 在规模为    </li>
+</ol>
+<p>​      的数据上用时为               而算法 B 在规模为          的数据上用时为           ，在数据规模小于     </p>
+<ol>
+<li>​        时算法 B 用时更短，但在一秒钟内算法 A 可以处理数百万规模的数据，而算法 B 只能处理数万规模的数据。在允许算法执行时间更久时，时间复杂度对可处理数据规模的影响就会更加明显，远大于同一数据规模下用时的影响。</li>
+<li>我们采用基本操作数来表示算法的用时，而不同的基本操作实际用时是不同的，例如加减法的用时远小于除法的用时。计算时间复杂度而忽略不同基本操作之间的区别以及一次基本操作与十次基本操作之间的区别，可以消除基本操作间用时不同的影响。</li>
+</ol>
+<p>当然，算法的运行用时并非完全由输入规模决定，而是也与输入的内容相关。所以，时间复杂度又分为几种，例如：</p>
+<ol>
+<li>最坏时间复杂度，即每个输入规模下用时最长的输入对应的时间复杂度。在算法竞赛中，由于输入可以在给定的数据范围内任意给定，我们为保证算法能够通过某个数据范围内的任何数据，一般考虑最坏时间复杂度。</li>
+<li>平均（期望）时间复杂度，即每个输入规模下所有可能输入对应用时的平均值的复杂度（随机输入下期望用时的复杂度）。</li>
+</ol>
+<p>所谓“用时随数据规模而增长的趋势”是一个模糊的概念，我们需要借助下文所介绍的 <strong>渐进符号</strong> 来形式化地表示时间复杂度。</p>
 
                 <hr>
                 
@@ -224,7 +240,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HTML5-%E5%8F%82%E8%80%83%E6%89%8B%E5%86%8C"><span class="toc-text">HTML5  参考手册</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%8F%E8%BF%B0"><span class="toc-text">描述</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HTML5-%E5%8F%82%E8%80%83%E6%89%8B%E5%86%8C"><span class="toc-text">HTML5  参考手册</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%8F%E8%BF%B0"><span class="toc-text">描述</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="toc-text">复杂度</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E6%95%B0%C2%B6"><span class="toc-text">基本操作数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%C2%B6"><span class="toc-text">时间复杂度</span></a></li></ol></li></ol>
                 </div>
             </div>
         </div>
